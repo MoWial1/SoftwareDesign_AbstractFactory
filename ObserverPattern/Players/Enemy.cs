@@ -8,10 +8,12 @@ namespace ObserverPattern.Players
     {
         public Point Position { get; private set; }
         private Panel visual;
+        private Point heroTarget;
 
         public Enemy(Point start, Control parent)
         {
             Position = start;
+            heroTarget = start;
             visual = new Panel()
             {
                 Size = new Size(20, 20),
@@ -23,9 +25,14 @@ namespace ObserverPattern.Players
 
         public void UpdatePosition(Point heroPosition)
         {
-            // Просте переміщення на 10 пікселів у напрямку героя
-            int dx = Math.Sign(heroPosition.X - Position.X) * 10;
-            int dy = Math.Sign(heroPosition.Y - Position.Y) * 10;
+            heroTarget = heroPosition;
+        }
+
+        public void Tick()
+        {
+            int dx = Math.Sign(heroTarget.X - Position.X) * 2;
+            int dy = Math.Sign(heroTarget.Y - Position.Y) * 2;
+
             Position = new Point(Position.X + dx, Position.Y + dy);
             visual.Location = Position;
         }

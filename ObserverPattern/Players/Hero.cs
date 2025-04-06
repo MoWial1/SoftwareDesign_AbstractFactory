@@ -12,7 +12,6 @@ namespace ObserverPattern.Players
         public void MoveTo(Point newPosition)
         {
             Position = newPosition;
-            NotifyObservers();
         }
 
         public void AddObserver(IEnemyObserver observer)
@@ -25,12 +24,21 @@ namespace ObserverPattern.Players
             observers.Remove(observer);
         }
 
-        private void NotifyObservers()
+        public void NotifyObservers()
         {
             foreach (var observer in observers)
             {
                 observer.UpdatePosition(Position);
             }
         }
+
+        public void TickObservers()
+        {
+            foreach (var observer in observers)
+            {
+                observer.Tick();
+            }
+        }
     }
+
 }

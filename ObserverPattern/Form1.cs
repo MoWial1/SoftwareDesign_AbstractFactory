@@ -10,6 +10,7 @@ namespace ObserverPattern
         private Hero hero;
         private Panel heroVisual;
         private Random rand = new Random();
+        private Timer gameTimer;
 
         public GameForm()
         {
@@ -41,13 +42,23 @@ namespace ObserverPattern
             }
 
             this.MouseClick += GameForm_MouseClick;
+
+            gameTimer = new Timer();
+            gameTimer.Interval = 30;
+            gameTimer.Tick += GameLoop;
+            gameTimer.Start();
         }
 
-        // Клік по формі переміщує героя
         private void GameForm_MouseClick(object sender, MouseEventArgs e)
         {
             hero.MoveTo(e.Location);
             heroVisual.Location = e.Location;
+            hero.NotifyObservers();
+        }
+
+        private void GameLoop(object sender, EventArgs e)
+        {
+            hero.TickObservers();
         }
     }
 }
