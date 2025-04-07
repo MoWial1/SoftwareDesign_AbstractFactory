@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorClinicApp", "Mediat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{7C9553AF-00DD-4A79-B4C9-A72AB567B2A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MementoPattern", "MementoPattern\MementoPattern.csproj", "{56CD2BE1-2C82-4597-9F63-EBF56A04AB36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{7C9553AF-00DD-4A79-B4C9-A72AB567B2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C9553AF-00DD-4A79-B4C9-A72AB567B2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C9553AF-00DD-4A79-B4C9-A72AB567B2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CD2BE1-2C82-4597-9F63-EBF56A04AB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CD2BE1-2C82-4597-9F63-EBF56A04AB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CD2BE1-2C82-4597-9F63-EBF56A04AB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CD2BE1-2C82-4597-9F63-EBF56A04AB36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
